@@ -1,0 +1,154 @@
+/* Установите общие стили для сайта */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Установите темные тона для сайта */
+  body {
+    background-color: #222;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  /* Стилизуйте блок header */
+  .header {
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+  }
+  
+  /* Стилизуйте блок navbar */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #444;
+  }
+/* Выровняйте карточки по центру колонок */
+
+  /* Стилизуйте ссылки в блоке navbar */
+  .navbar a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Стилизуйте ссылку с классом right */
+  .navbar a.right {
+    margin-left: auto;
+  }
+  
+  /* Стилизуйте блок main */
+  .main {
+    padding: 20px;
+  }
+  
+  /* Стилизуйте блок catalog */
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  
+  /* Стилизуйте блок card */
+  .card {
+    border: 1px solid white;
+    padding: 10px;
+  }
+  
+  /* Стилизуйте изображения в блоке card */
+  .card img {
+    width: 70%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+/* Добавьте свойство background-size для кнопок в блоке card */
+/* Добавьте свойство margin для кнопок в блоке card */
+.card button {
+    display: block;
+    width: auto;
+    padding: 10px;
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto; /* выровнять кнопку по центру */
+  }
+  
+  /* Добавьте псевдокласс :hover для кнопок в блоке card */
+.card button:hover {
+    background-color: #1abc9c;
+    color:white;
+  }
+  
+  
+  
+  
+  /* Стилизуйте блок footer */
+  .footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+  }
+  /* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    /* Сделайте блок navbar гибким по вертикали */
+    .navbar {
+      flex-direction: column;
+    }
+  
+    /* Спрячьте все ссылки в блоке navbar, кроме ссылки с классом right */
+    .navbar a:not(.right) {
+      display: none;
+    }
+  
+    /* Стилизуйте ссылку с классом right как бургер меню */
+    .navbar a.right {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+    }
+  
+    /* Добавьте три полоски для бургер меню */
+    .navbar a.right::before,
+    .navbar a.right::after,
+    .navbar a.right span {
+      position: absolute;
+      width: 30px;
+      height: 4px;
+      background-color: white;
+      content: "";
+    }
+  
+    /* Расположите три полоски по центру ссылки */
+    .navbar a.right::before {
+      top: 8px;
+    }
+  
+    .navbar a.right span {
+      top: 18px;
+    }
+  
+    .navbar a.right::after {
+      top: 28px;
+    }
+  
+    /* Сделайте блок catalog одноколоночным */
+    .catalog {
+      grid-template-columns: 1fr;
+    }
+  
+    /* Уменьшите высоту изображений в блоке card */
+    .card img {
+      height: 150px;
+    }
+  }
